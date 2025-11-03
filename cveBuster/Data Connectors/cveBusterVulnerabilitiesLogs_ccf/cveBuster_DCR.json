@@ -1,0 +1,113 @@
+[
+  {
+    "name": "cveBusterVulnerabilitiesDCR",
+    "location": "[parameters('workspace-location')]",
+    "apiVersion": "2021-09-01-preview",
+    "type": "Microsoft.Insights/dataCollectionRules",
+    "properties": {
+      "dataCollectionEndpointId": "{{dataCollectionEndpointId}}",
+      "streamDeclarations": {
+        "Custom-cveBusterVulnerabilitiesStream": {
+          "columns": [
+            {
+              "name": "MachineName",
+              "type": "string"
+            },
+            {
+              "name": "HostId",
+              "type": "string"
+            },
+            {
+              "name": "IPAddress",
+              "type": "string"
+            },
+            {
+              "name": "OSFamily",
+              "type": "string"
+            },
+            {
+              "name": "Application",
+              "type": "string"
+            },
+            {
+              "name": "AppFilePath",
+              "type": "string"
+            },
+            {
+              "name": "VulnId",
+              "type": "string"
+            },
+            {
+              "name": "VulnTitle",
+              "type": "string"
+            },
+            {
+              "name": "Severity",
+              "type": "string"
+            },
+            {
+              "name": "CVSS",
+              "type": "real"
+            },
+            {
+              "name": "ExploitAvailable",
+              "type": "boolean"
+            },
+            {
+              "name": "ExploitedInWild",
+              "type": "boolean"
+            },
+            {
+              "name": "PatchAvailable",
+              "type": "boolean"
+            },
+            {
+              "name": "FirstSeen",
+              "type": "datetime"
+            },
+            {
+              "name": "LastSeen",
+              "type": "datetime"
+            },
+            {
+              "name": "LastScanTime",
+              "type": "datetime"
+            },
+            {
+              "name": "AssetCriticality",
+              "type": "string"
+            },
+            {
+              "name": "BusinessOwner",
+              "type": "string"
+            },
+            {
+              "name": "Source",
+              "type": "string"
+            }
+          ]
+        }
+      },
+      "destinations": {
+        "logAnalytics": [
+          {
+            "workspaceResourceId": "{{workspaceResourceId}}",
+            "name": "clv2ws1"
+          }
+        ]
+      },
+      "dataFlows": [
+        {
+          "streams": [
+            "Custom-cveBusterVulnerabilitiesStream"
+          ],
+          "destinations": [
+            "clv2ws1"
+          ],
+          "transformKql": "source | extend TimeGenerated = now()",
+          "outputStream": "Custom-cveBusterVulnerabilities_CL"
+        }
+      ]
+    }
+  }
+]

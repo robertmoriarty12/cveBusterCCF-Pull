@@ -1,0 +1,123 @@
+[
+  {
+    "name": "cveBusterVulnerabilities_CL",
+    "apiVersion": "2022-10-01",
+    "type": "Microsoft.OperationalInsights/workspaces/tables",
+    "properties": {
+      "schema": {
+        "name": "cveBusterVulnerabilities_CL",
+        "tableType": "CustomLog",
+        "description": "cveBuster vulnerability scan data containing CVE details, asset information, patch status, and exploit intelligence",
+        "columns": [
+          {
+            "name": "TimeGenerated",
+            "type": "datetime",
+            "isDefaultDisplay": true,
+            "description": "The timestamp when the data was ingested into Sentinel"
+          },
+          {
+            "name": "MachineName",
+            "type": "string",
+            "isDefaultDisplay": true,
+            "description": "Hostname of the scanned machine"
+          },
+          {
+            "name": "HostId",
+            "type": "string",
+            "description": "Unique identifier for the host (GUID format)"
+          },
+          {
+            "name": "IPAddress",
+            "type": "string",
+            "description": "IP address of the scanned machine"
+          },
+          {
+            "name": "OSFamily",
+            "type": "string",
+            "description": "Operating system family (Windows/Linux/macOS)"
+          },
+          {
+            "name": "Application",
+            "type": "string",
+            "isDefaultDisplay": true,
+            "description": "Name of the vulnerable application"
+          },
+          {
+            "name": "AppFilePath",
+            "type": "string",
+            "description": "File path of the vulnerable application"
+          },
+          {
+            "name": "VulnId",
+            "type": "string",
+            "isDefaultDisplay": true,
+            "description": "CVE identifier (e.g., CVE-2024-1234)"
+          },
+          {
+            "name": "VulnTitle",
+            "type": "string",
+            "isDefaultDisplay": true,
+            "description": "Vulnerability title/description"
+          },
+          {
+            "name": "Severity",
+            "type": "string",
+            "isDefaultDisplay": true,
+            "description": "Vulnerability severity level (Critical/High/Medium/Low)"
+          },
+          {
+            "name": "CVSS",
+            "type": "real",
+            "isDefaultDisplay": true,
+            "description": "CVSS score (0.0-10.0)"
+          },
+          {
+            "name": "ExploitAvailable",
+            "type": "boolean",
+            "description": "Whether a public exploit is available for this vulnerability"
+          },
+          {
+            "name": "ExploitedInWild",
+            "type": "boolean",
+            "description": "Whether active exploitation has been detected"
+          },
+          {
+            "name": "PatchAvailable",
+            "type": "boolean",
+            "description": "Whether a patch is available from the vendor"
+          },
+          {
+            "name": "FirstSeen",
+            "type": "datetime",
+            "description": "First time this vulnerability was detected on the asset"
+          },
+          {
+            "name": "LastSeen",
+            "type": "datetime",
+            "description": "Last time this vulnerability was detected"
+          },
+          {
+            "name": "LastScanTime",
+            "type": "datetime",
+            "description": "Most recent scan timestamp for this asset"
+          },
+          {
+            "name": "AssetCriticality",
+            "type": "string",
+            "description": "Business criticality of the asset (Critical/High/Medium/Low)"
+          },
+          {
+            "name": "BusinessOwner",
+            "type": "string",
+            "description": "Team or department responsible for the asset"
+          },
+          {
+            "name": "Source",
+            "type": "string",
+            "description": "Data source identifier (always 'cveBuster')"
+          }
+        ]
+      }
+    }
+  }
+]

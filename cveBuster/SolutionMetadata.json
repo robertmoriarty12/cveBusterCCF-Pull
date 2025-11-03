@@ -1,0 +1,22 @@
+{
+  "publisherId": "yourcompany",
+  "offerId": "cvebuster-sentinel-solution",
+  "firstPublishDate": "2025-11-02",
+  "lastPublishDate": "2025-11-02",
+  "providers": [
+    "Your Company"
+  ],
+  "categories": {
+    "domains": [
+      "Security - Vulnerability Management",
+      "Security - Threat Protection"
+    ],
+    "verticals": []
+  },
+  "support": {
+    "name": "Your Company Support",
+    "email": "support@yourcompany.com",
+    "tier": "Partner",
+    "link": "https://yourcompany.com/support"
+  }
+}

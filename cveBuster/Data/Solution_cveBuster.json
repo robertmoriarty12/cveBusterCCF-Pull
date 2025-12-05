@@ -1,5 +1,5 @@
 {
-  "Name": "cveBuster Vulnerability Scanner",
+  "Name": "cveBusterCCF-Pull",
   "Author": "Your Company - support@yourcompany.com",
   "Logo": "<svg>...</svg>",
   "Description": "The cveBuster solution provides automated vulnerability data ingestion from your cveBuster API into Microsoft Sentinel using the Codeless Connector Framework (CCF). This connector polls your vulnerability scanner API and ingests comprehensive vulnerability scan data including CVE details, asset information, patch availability, and exploit intelligence.",
